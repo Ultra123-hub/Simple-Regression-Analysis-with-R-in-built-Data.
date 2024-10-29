@@ -1,8 +1,8 @@
 # Simple-Regression-Analysis-with-R-in-built-Data.
-This is an operation to make data slicing on in-built data frames in R and perform simple regression analysis.
+This involves an operation to make data slicing on in-built data frames in R and perform Simple Regression Analysis.
 
-## Uthman's Assignment
-## QUESTION 1
+
+## Data Ingestion
 
 ```r
 load the in-built data USArrests
@@ -10,15 +10,17 @@ USArrests
 attach(USArrests)
 ```
 
-Exploring the data
+## Exploring the data
 
 We first start by checking the number of rows
+
 ```r
 ## number of columns
 nrow(USArrests)
 ```
 
 then the number of columns
+
 ```r
 ncol(USArrests)
 head(USArrests)
@@ -38,13 +40,13 @@ mur.ass <- USArrests[c('Murder','Assault')]
 
 Onto the actual regression model
 
-## regression for Murder and Assault
+## Regression for Murder and Assault
 
 ```r
 reg_mur.ass <- lm(Murder~Assault,mur.ass)
 ```
 
-the summary of the regression analysis results
+The summary of the regression analysis results
 
 ```r
 summary(reg_mur.ass)
@@ -67,7 +69,7 @@ For subset Murder and Urban population
 mur.urban <- USArrests[c('Murder','UrbanPop')]
 ```
 
-* Regression for Murder and UrbanPop
+## Regression for Murder and UrbanPop
 
 ```r
 reg_mur.urban <- lm(Murder~UrbanPop,mur.urban)
@@ -83,7 +85,10 @@ summary(reg_mur.urban)
 
 murder = 6.42 + 0.021*UrbanPop where **intercept** = 6.42 and **slope** =0.021 with **significance** =  0.6312 which is greater than **p-value** = 0.05, we conclude that the test is not significant i.e **Urban population** do not significantly determine murder rate in the country, with **Adjusted R-squared:**  -0.01589 , Urban Population can not account for the variation in murder.
 
+
 ## QUESTION 2
+
+## Data Ingestion
 
 load the in-built data mtcars
 
@@ -91,7 +96,7 @@ load the in-built data mtcars
 mtcars
 ```
 
-exploring the data
+## Exploring the data
 
 number of rows
 ```r
@@ -110,7 +115,7 @@ subset cylinders and horsepower
 cyl.hp <-mtcars[c('cyl','hp')]
 ```
 
-Regression for Murder and Assault
+## Regression for Murder and Assault
 
 ```r
 reg_cyl.hp <- lm(hp~cyl,cyl.hp)
@@ -127,7 +132,7 @@ Subset cylinders and displacement
 cyl.disp <-mtcars[c('cyl','disp')]
 ```
 
-regression for cylinders and displacement
+## Regression for cylinders and displacement
 
 ```r
 reg_cyl.disp <- lm(disp~cyl,cyl.disp)
